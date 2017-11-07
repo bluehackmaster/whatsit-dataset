@@ -19,7 +19,6 @@ CATEGORY_IMG_FILE = './list_category_img.txt'
 EVAL_PARTITION_FILE = './list_eval_partition.txt'
 LABEL_MAP_FILE = 'label_map.pbtxt'
 
-
 def generate_annotation():
   f_category = open(CATEGORY_CLOTH_FILE, 'r')
   category_lines = f_category.readlines()
@@ -134,7 +133,6 @@ def generate_annotation():
     ElementTree(annotation).write(open(xml_file, 'wb'))
   f.close()
 
-
 def download_image(filename, url):
   try:
     download_name = DATASET_DIR + '/DownloadImages/' + filename
@@ -230,10 +228,9 @@ def copy_images():
   target_dir = os.path.join(DATASET_DIR, 'JPEGImages', 'img')
   shutil.copytree(DEEPFASHION_DIR, target_dir)
 
-
 if __name__ == '__main__':
-  make_directories()
-  copy_images()
-  generate_annotation()
-  generate_imageset()
+  #make_directories()
+  #copy_images()
+  #generate_annotation()
+  #generate_imageset()
   generate_labelmap()
